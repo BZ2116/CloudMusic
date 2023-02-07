@@ -1062,5 +1062,5 @@ document.onmouseup = function() {
 }
 let search1=document.getElementById("search1")
 search1.onclick=function (){
-  window.location.href="./搜索.html"
+  window.location.href="../html./搜索.html"
 }
