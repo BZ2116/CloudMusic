@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <html>
+<head>
+    <meta charset="UTF-8">
+    <title>竖直滑动条</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            background-color: #818181;
+            /* 防止选中 */
+            -webkit-user-select:none;
+            user-select:none;
+        }
+        #voice_total{
+            position: absolute;
+            height: 140px;
+            background-color: snow;
+            width: 20px;
+            top: 42%;
+            left: 50%;
+            transform: translate(-49.8%, -50%);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        #voice_pro {
+            width: 20px;
+            height: 100%;
+            position: absolute;
+            bottom: 0;
+            background-color: rgba(0, 174, 236, 0.9);
+        }
+        p{
+            margin-left: 100px;
+            color: black;
+        }
+ 
+    </style>
+</head>
+<body  oncontextmenu="doNothing()">
+<!-- 进度条 -->
+<div id="voice_total">
+    <!-- 当前音量 -->
+    <div style="pointer-events: none;" id="voice_pro"></div>
+ 
+</div>
+<p></p>
+<script>
+ 
+    const voiceTotal = document.getElementById("voice_total");
+    const ptxt = document.getElementsByTagName('p')[0];
+    const voicePro = document.getElementById("voice_pro");
+    //添加事件
+    voiceTotal.addEventListener("mousedown", function (event) {
+        // 获取按下时鼠标初始位置
+        let y = event.pageY;
+        // 按下时重新设置进度条
+        voicePro.style.height = (140 - event.offsetY) + "px";
+        // 获取进度条的初始height
+        let voiceProLen = voicePro.offsetHeight
+        // 计算当前进度条比例
+        let ratio = voiceProLen / 140;
+ 
+        ptxt.innerHTML = "当前进度条的比例：" + parseInt(ratio * 100);
+        // 更改音量
+        // video.volume = ratio;
+ 
+        // 拖动需要写到down里面
+        document.onmousemove = function(event) {
+            // 获取移动的距离
+            let diff = y - event.pageY;
+            // 计算当前进度条的height
+            let voiceProLenNew = voiceProLen + diff;
+            // 当超出进度条范围，控制
+            if(voiceProLenNew < 0) {
+                voiceProLenNew = 0;
+            } else if(voiceProLenNew > 140) {
+                voiceProLenNew = 140;
+            }
+ 
+            // 更改进度条height
+            voicePro.style.height = voiceProLenNew + "px";
+ 
+            // 计算当前进度条比例
+            let ratio = voiceProLenNew / 140;
+ 
+            ptxt.innerHTML = "当前进度条的比例：" + parseInt(ratio * 100);
+            // 更改音量
+            // video.volume = ratio;
+        }
+    });
+    //当鼠标弹起的时候，不做任何操作
+    document.onmouseup = function() {
+        document.onmousemove = null;
+    }
+ 
+</script>
+</body>
+</html>
+</body>
+</html>

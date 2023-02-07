@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 导航栏和轮播图 -->
+    <style>
+        body{
+            margin: 0ch;
+        }
+        div{
+            display: block;
+        }
+        a{
+            text-decoration: none;
+        }
+        /*第一部分 导航栏*/
+        .topnav{
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+    position: absolute;
+        }
+        /*1.1*/
+        .topnav1
+        {
+    z-index: 1000;
+    height: 70px;
+    width: 100%;
+    background: #242424;
+    border-bottom: 1px solid #000;
+ 
+        }
+        .topnav2{
+            width: 1100px;
+            height: 70px;
+            margin: 0px auto;
+         
+        }
+        .logo{
+            float: left;
+            height: 69px;
+            width: 176px;
+            margin:0;
+            background-color: #242424;
+            color: rgba(240, 248, 255, 0.644);
+            margin-left: auto;
+            
+            
+        }
+        .logo img{
+            margin-top: 10px;
+            float: left;
+            position:static;
+            height: 45px;
+        }
+        
+         .logo a.name1{
+            color: rgba(240, 248, 255, 0.644);
+             text-decoration: none;
+             font-size: 25px;
+             margin-top: 18px;
+             float: left;
+            
+        }
+     .nav{
+        margin: 0ch;
+        padding-left: 0px;
+        float: left;
+        list-style: none;
+     }
+     .nav li{
+        float: left;
+        background-position: right -300px;
+        
+     }
+     .nav li span{
+        background: none;
+     }
+     .nav .presentweb{
+       background-color: black;
+       height: 70px;
+     }
+     .nav .presentweb span a{
+
+    text-decoration: none;
+margin-left: auto;
+     padding: 19px;
+text-align: center;
+    line-height: 70px;
+    color: white;
+     }
+    .xiaojiantou{
+        display: block;
+    margin-left: 43.5%;
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
+   border-top: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom:7px solid #C20C0C;
+    border-left: 7px solid transparent;
+margin-top: -13px;
+     }
+     .hot{
+        float: left;
+        display:block;
+        overflow:hidden;
+        margin-left: -15px;
+        margin-top: 20px;
+    width: 26px;
+    height: 14px;
+    background-color: red;
+    border-radius: 10px;
+    color: white;
+font-size:0.5pt;
+text-align: center;
+     }
+  .nav a.aa{
+    text-decoration: none;
+    color: rgba(240, 248, 255, 0.249);
+     padding: 19px;
+    text-align: center;
+    line-height: 70px;
+    color: aliceblue;
+    font-size: 16px;
+  }
+  .search
+  {
+    float: left;
+  }
+  .search input{
+    width: 135px;
+    float: left;
+    border-radius: 20px ;
+    border-style: none;
+    margin-top: 20px;
+    margin-left: 55px;
+    height: 30px;
+background-color:white;
+color: #000;
+outline-style: none;
+padding-left: 30px;
+  }
+  .search  img{
+    margin-left :-158px;
+    margin-top: 27px;
+    height: 20px;
+  }
+  #chuangzuo{
+float: left;
+  }
+  #chuangzuo span{
+
+    float: left;
+    margin-top: -32px;
+margin-left: 238px; 
+border-radius:22px ;
+padding: 0 1px 0 1px;
+    border: 0.5px solid rgba(240, 248, 255, 0.664); 
+    color: rgba(240, 248, 255, 0.751);
+    font-size: 13px;
+    line-height: 30px;
+    text-align: center;
+  }
+
+#tou{
+    float: left;
+    height: 32px;
+    border-radius: 16px;
+    margin-top: -31px;
+    margin-left: 330px;
+}
+#menu{
+            position: fixed;
+           text-align: center;
+            width:150px;
+            border: 1px solid rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.694);
+            list-style: none;
+            margin-left: 1005px;
+            margin-top: 60px;
+            border-radius: 10px;
+       padding: 0;
+       font-size: small;
+            display: none;
+}
+#menu li{
+    line-height: 30px;
+   
+}
+#menu a{
+            color: #fff;
+            text-decoration: none;
+        }
+        #jian{
+        display:block;
+        width: 0px;
+    height: 0px;
+            margin-top: -18px;
+            margin-left: 65px;
+            overflow: hidden;
+   border-top: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom:10px solid rgba(0, 0, 0, 0.694);
+    border-left: 10px solid transparent;
+        }
+
+  /*1.2*/
+  .secnav{
+    z-index: 1000;
+    height: 35px;
+    background: #C20C0C;
+    border-bottom: 1px solid #000;
+margin-top: -17px;
+
+  }
+  .secnavmid{
+            width: 1100px;
+            height: 35px;
+            margin:auto  ;
+        }
+        .secnav ul{
+            padding-left: 180px;
+        }
+        .secnav ul li  {
+            list-style: none;
+            float: left;
+        height:  34px;
+        background-color: #C20C0C;
+        }
+        .secnav ul li a {
+            text-decoration: none;
+        }
+        .secnav ul li a em{
+            display: inline-block;
+            height: 20px;
+            padding: 0 13px;
+            margin: 7px 17px 0;
+            border-radius: 20px;
+            line-height: 21px;
+            font-style: normal;
+            color: white;
+            font-size: 10px;
+        }
+      </style>
+      <!-- 第二部分  轮播图 -->
+      <style>
+        
+        .lunbo{
+            overflow: hidden;
+        height: 300px;
+        width: 100%;
+        margin-top: 106px;
+        background-image: url(https://p1.music.126.net/pB7_jQC6fjmUyTUzDDQWrg==/109951168216935716.jpg?imageView&quality=89);
+        background-size: 6500px;
+        background-position: center center;
+        }
+        .cover{
+            display: flex;
+            margin: 0 auto;
+            height: 300px;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.08);
+        backdrop-filter: blur(100px);
+        }
+        .lunbo .box{
+
+            height: 300px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+       .lunbo .pic{
+        height: 300px;
+        margin: 0 auto;
+        width: 771.43px;
+        font-size: 30px;
+       
+        float: left;
+        }
+
+         .pic a {
+            overflow: hidden;
+            text-align: center;
+            height: 300px;
+            width: 771.34px;
+            padding: auto ;
+        }
+        .pic img{
+           height: 300px;
+            opacity: 1;
+            margin: 0  auto;
+            text-align: center;
+            
+        }
+
+
+        .lis{
+            text-align: center;
+            border-radius: 5px;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .lis span{
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: rgba(204, 204, 204, 0.534);
+        }
+        .lis span.current{
+            background-color: rgb(255, 47, 47);
+            
+        }
+        .pre,.next{
+            width: 40px;
+            height: 80px;
+            line-height: 80px;
+            font-size: 30px;
+            text-align: center;
+            color: #fff;
+            background-color: rgba(141, 141, 141, 0.315);
+            position: absolute;
+            transform: translateY(-50%);
+            cursor: pointer;
+            display: none;    
+        }
+        .lunbo:hover .pre{
+            display: block;
+        }
+        .lunbo:hover .next{
+            display: block;
+        }
+        .pre{
+            left: 0;
+            top: 50%;
+        }
+        .next{
+            right: 0;
+            top: 50%;
+        }
+        </style>
+          <!-- 推荐   -->
+        <style>
+    .bigtui{
+        width: 980px;
+        border-color: #242424;
+        margin: 0 auto;
+        min-height: 700px;
+        height: 1400px;
+        border: 1.5px solid #2a28281c;
+        border-width: 0 1px;
+        background: url(https://s2.music.126.net/style/web2/img/frame/wrap1.png?e8eab64a7077a6447ea45d741b58a24a) repeat-y 100% 100%;
+}
+.midtui{
+    float: left;
+    width:100%;
+    margin-right: -250px;
+}
+.midtui .midtui2{
+    margin-right: 250px;
+    float: left;
+}
+.midtui .zuotui{
+    padding: 20px 20px 40px;
+    display:flex;
+    flex-direction: column;
+}
+.remen .remennav{
+height: 33px;
+padding: 0 10px 0 34px;
+border-bottom: 2.5px solid #C20C0C;
+position: relative;
+}
+.remennav img{
+    position: absolute;
+    height: 32px;
+top: -3px;
+    left:-2px;
+
+}
+.remennav a{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: larger;
+    float: left;
+    color: rgba(5, 4, 4, 0.687);
+}
+.rementab{
+    float: left;
+    margin: 7px 0 0 20px;
+}
+.rementab a{
+    font-size: 5px;
+    float: left;
+}
+.rementab span{
+margin: 0 10px ;
+font-size: 5px;
+float: left;
+color: rgba(181, 170, 170, 0.868);
+}
+.remennav .more{
+    float: right;
+    font-size: 10px;
+    margin-top: 7px;
+    margin-left: 300px;
+
+    
+}
+
+.remennav .more a{
+color: rgba(163, 155, 155, 0.658);
+
+}
+.remennav .more i{
+display: inline-block;
+width: 12px;
+height: 12px;
+top: 10px;
+position: absolute;
+
+}
+
+.remennav .more i img{
+    height: 10px;
+    left: 2px;
+    top: 0.5px;
+    float: right;
+
+}
+.remengedan{
+    padding: 0;
+    
+}
+
+.remengedan li{
+    list-style: none;
+    overflow: hidden;
+    display:inline-block;
+    line-height: 1.4;
+    width: 140px;
+    height: 204px;
+    /* padding: 66.2px; */
+    /* margin: 50px 20px; */
+    padding-left: 25px;
+    padding-bottom: 60px;
+    /* float: left; */
+}
+
+.remengedan li img{
+    height: 100%;
+    width: 100%;
+    display: block;
+
+}
+
+.remenpic{
+    height: 140px;
+    width: 140px;
+    position: absolute;
+    
+}
+
+.remenpic .picunder{
+position:absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 27px;
+    color: #ccc;
+    /* background-color: rgba(156, 150, 150, 0.831); */
+    background-position: 0 -537px;
+    background: url(https://s2.music.126.net/style/web2/img/coverall.png?c31b8a8ccefb4483100cb043d8147c20);
+}
+
+.picunder a{
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    width: 16px;
+    height: 17px;
+    background: url(https://s2.music.126.net/style/web2/img/iconall.png?49986faf7f1e22261226e23b3f0bc9b5) no-repeat;
+}
+.erji{
+    float: left;
+    width: 12px;
+    height: 12px;
+    background-position:  -24px;
+    margin: 7px 5px 8px;
+    background: url(https://s2.music.126.net/style/web2/img/iconall.png?49986faf7f1e22261226e23b3f0bc9b5) no-repeat;
+    
+    
+}
+.bofangliang{
+    float: left;
+    font-size: 12px;
+    margin-top: 6px;
+    margin-left: 2px;
+    color: rgba(0, 0, 0, 0.89);
+}
+.remenwords{
+    position: absolute;
+font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+
+.remenwordsa{
+    position: absolute;
+height: 44px;
+width: 144px;
+left: 0;
+top: 0;
+}
+.gexing .gexingnav{
+height: 33px;
+padding: 0 10px 0 34px;
+border-bottom: 2.5px solid #C20C0C;
+position: relative;
+}
+.gexingnav img {
+    position: absolute;
+    height: 32px;
+    top: -3px;
+    left: -2px;
+}
+.gexingnav a {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: larger;
+    float: left;
+    color: black;
+}
+
+
+.datehead{
+    display: block;
+    height: 33px;
+    line-height: 33px;
+    color: #fed9d9;
+    font-size: 14px;
+    text-shadow: 0 -1px #962626;
+    text-align: center;
+    background: url(https://s2.music.126.net/style/web2/img/date.png?8d36f51e20f0ac639fde0a0b3831e06b);
+background-position: 0 0px;
+}
+
+.bd{
+    display: block;
+    line-height: 102px;
+    text-align: center;
+    font-size: 94px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #202020;
+    border: 0.5px solid rgb(190, 190, 190);
+}
+
+.bangdan .bangdannav{
+    height: 33px;
+padding: 0 10px 0 34px;
+border-bottom: 2.5px solid #C20C0C;
+position: relative;
+}
+.bangdannav img {
+    position: absolute;
+    height: 32px;
+    top: -3px;
+    left: -2px;
+}
+.bangdannav a {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: larger;
+    float: left;
+    color: black;
+}
+.bangdannav .more{
+    float: right;
+    font-size: 10px;
+    margin-top: 7px;
+    margin-left: 300px;
+}
+.bangdannav .more i{
+
+    display: inline-block;
+width: 12px;
+height: 12px;
+top: 10px;
+position: absolute;
+
+
+}
+
+.bangdannav .more i img{
+    height: 10px;
+    left: 2px;
+    top: 0.5px;
+    float: right;
+
+}
+ </style>
+</head>
+<div class="topnav">
+    <div class="topnav1">
+        <div class="topnav2">
+        <h1 class="logo">
+        <img src="./img/topnav-logo.png" >
+       <a class="name1" href="#">
+        网易云音乐
+    </a> 
+        </h1>
+  
+<u1 class="nav">
+    <li class="presentweb">
+        <span>
+<a  href="/#">
+    发现音乐
+</a>
+     <sub class="xiaojiantou">&nbsp;</sub>
+</span>
+    </li>
+    <li class="hover1">
+        <span >
+<a class="aa" href="/#">我的音乐</a>
+      
+          </span>
+    </li>
+    <li class="hover1">
+        <span>
+<a class="aa" href="/#">关注</a>
+      
+          </span>
+    </li>
+    <li class="hover1">
+        <span >
+<a class="aa" href="/#">商城</a>
+      
+          </span>
+    </li>
+    <li class="hover1">
+        <span >
+<a class="aa" href="/#">音乐人</a>
+      
+          </span>
+    </li>
+    <li class="hover1">
+        <span >
+<a class="aa" href="/#" style="z-index: 500;">下载客户端</a>
+      
+          </span>
+    </li>
+    <sup class="hot" >HOT</sup>
+</u1>  
+<div class="search">
+    <img src="./img/search.png">
+    <span>
+    <input type="text" placeholder="  音乐/视频/电台/用户">
+    
+</span>
+</div>
+<div id="chuangzuo">
+    
+    <a  href="/#">
+       <span id="zhongxin"&nbsp;> 创作者中心</span>
+    </a>
+
+</div>
+<div class="headpic">
+    <img id="tou" src="http://p1.music.126.net/yoEoFvgut6qR9G0pSCQKlA==/109951168279262878.jpg">
+    <ul id="menu">
+        <span id="jian">
+            </span>        
+        <li class="menu1" style="border-top-left-radius: 10px;border-top-right-radius: 10px;"><a href="#" >  我的主页</a></li>
+        <li class="menu1"><a href="#" >  我的消息</a></li>
+        <li class="menu1"><a href="#" >  我的等级</a></li>
+        <li class="menu1"><a href="#" >  VIP设置</a></li>
+        <li class="menu1"><a href="#" >  个人设置</a></li>
+        <li class="menu1"><a href="#" >  实名认证</a></li>
+        <li class="menu1" style="border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;"><a href="#" >  退出</a></li>
+
+    
+    </ul>
+</div>
+</div>
+</div>
+<div class="secnav">
+    
+    <div class="secnavmid">
+        <ul>
+            <li style="background-color:#C20C0C;">
+                <a href="/#" >
+<em style="background-color: #24242460;" >推荐</em>
+                </a>
+            </li>
+            <li style="background-color:#C20C0C;">
+                <a href="/#" >
+<em class="hover2" >排行榜</em>
+                </a>
+            </li>
+            <li style="background-color:#C20C0C;">
+                <a href="/#" >
+<em  class="hover2">歌单</em>
+                </a>
+            </li>
+            <li style="background-color:#C20C0C;">
+                <a href="/#" >
+<em  class="hover2">主播电台</em>
+                </a>
+            </li>
+            <li style="background-color:#C20C0C;">
+                <a href="/#" >
+<em  class="hover2">歌手</em>
+                </a>
+            </li>
+            <li style="background-color:#C20C0C;">
+                <a href="/#" >
+<em class="hover2" >新碟上架</em>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+<div class="lunbo" > 
+        <div class="cover">
+            <div class="pre">&lt;</div>
+            <div class="next">&gt;</div>
+            <div class="box">
+                <div class="pic">
+                    <a href="/#"><img src="https://p1.music.126.net/pB7_jQC6fjmUyTUzDDQWrg==/109951168216935716.jpg?imageView&quality=89"></a>
+                    <a href="/#"><img src="https://p1.music.126.net/-2gJQpS6D8WcLQfZaHc0ww==/109951168216937297.jpg?imageView&quality=89"></a>
+                    <a href="/#"><img src="https://p1.music.126.net/gmiLxNDv5INLamkhye9bgg==/109951168216917436.jpg?imageView&quality=89"></a>
+                    <a href="/#"><img src="https://p1.music.126.net/RTqhH5Rg3zZ4pBbuzi8HkQ==/109951168216909934.jpg?imageView&quality=89"></a>
+                    <a href="/#"><img src="https://p1.music.126.net/pA3N4_mn_4MomPaddxRpww==/109951168216939844.jpg?imageView&quality=89"></a>
+                    <a href="/#"><img src="https://p1.music.126.net/pB7_jQC6fjmUyTUzDDQWrg==/109951168216935716.jpg?imageView&quality=89"></a>
+                </div>
+               
+                <div class="lis">
+                    <span class="current"></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+</div>
+</div>
+<div class="bigtui">
+    <div class="midtui">
+<div class="midtui2">
+<div class="zuotui">
+    <div class="remen">
+<div class="remennav">
+    <img src="img/推荐.png">
+<a class="rementitle" href="/#">
+    热门推荐
+</a>
+
+<div class="rementab">
+    <a style="color: #666;" href="/#">华语</a>
+    <span class="shuxian">|</span>
+    <a style="color: #666;" href="/#">流行</a>
+    <span class="shuxian">|</span>
+    <a style="color: #666;" href="/#">摇滚</a>
+    <span class="shuxian">|</span>
+    <a style="color: #666;" href="/#">民谣</a>
+    <span class="shuxian">|</span>
+    <a style="color: #666;" href="/#">电子</a>
+</div>
+<span class="more">
+    <a>更多</a>
+    <i><img src="img/小箭头.png"></i>
+</span>
+
+</div>
+<ul class="remengedan">
+<li>
+    <div class="remenpic">
+        
+        <a title="【电子】入耳收藏的经典旋律" href="/#" class="piclianjie"><img src="https://p1.music.126.net/ZvJP5ZEI4EWdKoh3EUIbdg==/1365593450023866.jpg?param=140y140">  
+              </a> 
+              <div class="picunder">
+
+             
+            <a title="播放" href="/#" ></a>
+            <span  class="erji"></span>
+            <span class="bofangliang">5414万</span>
+        </div>
+    
+     
+
+    <p class="remenwords">【电子】入耳收藏的经典旋律<a class="remenwordsa" href="/#" title="【电子】入耳收藏的经典旋律"></a></p>
+</li>
+<li>
+    <div class="remenpic">
+        
+        <a title="时间治愈的是 愿意自渡之人" href="/#" class="piclianjie"><img src="https://p2.music.126.net/ezt2NwlaFgHbCXJOiCrprA==/109951162899017025.jpg?param=140y140">  
+              </a> 
+              <div class="picunder">
+
+             
+            <a title="播放" href="/#" ></a>
+            <span  class="erji"></span>
+            <span class="bofangliang">1224万</span>
+        </div>
+    
+     
+
+    <p class="remenwords">时间治愈的是 愿意自渡之人<a class="remenwordsa" href="/#" title="时间治愈的是 愿意自渡之人"></a></p>
+</li>
+<li>
+    <div class="remenpic">
+        
+        <a title="『纯电音游戏向』戴上耳机，任由电音轰炸★" href="/#" class="piclianjie"><img src="https://p2.music.126.net/XSbvzcNE5zYFwCEDUgllTQ==/3440371886310532.jpg?param=140y140">  
+              </a> 
+              <div class="picunder">
+
+             
+            <a title="播放" href="/#" ></a>
+            <span  class="erji"></span>
+            <span class="bofangliang">7790万</span>
+        </div>
+    
+     
+
+    <p class="remenwords">『纯电音游戏向』戴上耳机，任由电音轰炸★<a class="remenwordsa" href="/#" title="『纯电音游戏向』戴上耳机，任由电音轰炸★"></a></p>
+</li>
+<li>
+    <div class="remenpic">
+        
+        <a title="2022年全网最火最好听的歌曲推荐（更新快）" href="/#" class="piclianjie"><img src="https://p2.music.126.net/Oq97Nd6Wd1YEtoe2AxvogQ==/109951167910791680.jpg?param=140y140">  
+              </a> 
+              <div class="picunder">
+
+             
+            <a title="播放" href="/#" ></a>
+            <span  class="erji"></span>
+            <span class="bofangliang">3467万</span>
+        </div>
+    
+     
+
+    <p class="remenwords">2022年全网最火最好听的歌曲推荐（更新快）<a class="remenwordsa" href="/#" title="2022年全网最火最好听的歌曲推荐（更新快）"></a></p>
+</li>
+<li>
+    <div class="remenpic">
+        
+        <a title="国语古风中国风神曲，细腻地抚摸你的耳膜" href="/#" class="piclianjie"><img src="https://p2.music.126.net/psth_fcCEKjDVXRtijL_DQ==/1383185632930533.jpg?param=140y140">  
+              </a> 
+              <div class="picunder">
+
+             
+            <a title="播放" href="/#" ></a>
+            <span  class="erji"></span>
+            <span class="bofangliang">5201万</span>
+        </div>
+    
+     
+
+    <p class="remenwords">国语古风中国风神曲，细腻地抚摸你的耳膜<a class="remenwordsa" href="/#" title="国语古风中国风神曲，细腻地抚摸你的耳膜"></a></p>
+</li>
+<li>
+    <div class="remenpic">
+        
+        <a title="国产HipHop从地下到地上" href="/#" class="piclianjie"><img src="https://p2.music.126.net/t97_FTCUQsFJrh-gSE33_g==/109951167665585892.jpg?param=140y140">  
+              </a> 
+              <div class="picunder">
+
+             
+            <a title="播放" href="/#" ></a>
+            <span  class="erji"></span>
+            <span class="bofangliang">3939万</span>
+        </div>
+    
+     
+
+    <p class="remenwords">国产HipHop从地下到地上<a class="remenwordsa" href="/#" title="国产HipHop从地下到地上"></a></p>
+</li>
+<li>
+    <div class="remenpic">
+        
+        <a title="温柔暴击 | 沉溺于男友音的甜蜜乡" href="/#" class="piclianjie"><img src="https://p2.music.126.net/zlZc45irggToHtzvJaDfLA==/109951164802165973.jpg?param=140y140">  
+              </a> 
+              <div class="picunder">
+
+             
+            <a title="播放" href="/#" ></a>
+            <span  class="erji"></span>
+            <span class="bofangliang">4416万</span>
+        </div>
+    
+     
+
+    <p class="remenwords">温柔暴击 | 沉溺于男友音的甜蜜乡<a class="remenwordsa" href="/#" title="温柔暴击 | 沉溺于男友音的甜蜜乡"></a></p>
+</li>
+<li>
+    <div class="remenpic">
+        
+        <a title="[华语速爆新歌] 一起聆听王俊凯新歌，以信仰之跃见证无限希望" href="/#" class="piclianjie"><img src="https://p2.music.126.net/b_QLTN4BJVd5X-uHZjOWYA==/109951168214176003.jpg?param=140y140">  
+              </a> 
+              <div class="picunder">
+
+             
+            <a title="播放" href="/#" ></a>
+            <span  class="erji"></span>
+            <span class="bofangliang">107644万</span>
+        </div>
+    
+
+    <p class="remenwords">[华语速爆新歌] 一起聆听王俊凯新歌，以信仰之跃见证无限希望<a class="remenwordsa" href="/#" title="[华语速爆新歌] 一起聆听王俊凯新歌，以信仰之跃见证无限希望"></a></p>
+</li>
+</ul>
+    </div>
+    <div class="gexing">
+        <div class="gexingnav">
+            <img src="img/推荐.png">
+        <a class="rementitle" href="/#">
+            个性化推荐
+        </a>
+        
+        </div>
+        <ul class="remengedan">
+        <li>
+                <a title="每日歌曲推荐" href="/#" class="meiri">  
+                    <span class="datehead">星期二</span>
+                    <span class="bd">10</span>
+                </a> 
+             
+        
+            <p class="remenwords">每日歌曲推荐<a class="remenwordsa" href="/#" title="每日歌曲推荐"></a></p>
+        </li>
+        <li>
+            <div class="remenpic">
+                
+                <a title="私人雷达 | 根据听歌记录为你打造" href="/#" class="piclianjie"><img src="https://p1.music.126.net/CKoEjjHU7CLNswStmomKvQ==/109951168133469250.jpg?param=140y140">  
+                      </a> 
+                      <div class="picunder">
+        
+                     
+                    <a title="播放" href="/#" ></a>
+                    <span  class="erji"></span>
+                    <span class="bofangliang">139.7亿</span>
+                </div>
+            
+             
+        
+            <p class="remenwords">私人雷达 | 根据听歌记录为你打造<a class="remenwordsa" href="/#" title="私人雷达 | 根据听歌记录为你打造"></a></p>
+        </li>
+        <li>
+            <div class="remenpic">
+                
+                <a title="好听到单曲循环的中文歌单" href="/#" class="piclianjie"><img src="https://p1.music.126.net/QsMQpopqIAzGksfUqGUnIw==/109951166516631240.jpg?param=140y140">  
+                      </a> 
+                      <div class="picunder">
+        
+                     
+                    <a title="播放" href="/#" ></a>
+                    <span  class="erji"></span>
+                    <span class="bofangliang">394.9万</span>
+                </div>
+            
+             
+        
+            <p class="remenwords">好听到单曲循环的中文歌单<a class="remenwordsa" href="/#" title="好听到单曲循环的中文歌单"></a></p>
+        </li>
+        <li>
+            <div class="remenpic">
+                
+                <a title="2022全网爆火流行歌曲推荐（持更）" href="/#" class="piclianjie"><img src="https://p1.music.126.net/zEI1F5fZmNJuRlBbf6F9iw==/109951167361087329.jpg?param=140y140">  
+                      </a> 
+                      <div class="picunder">
+        
+                     
+                    <a title="播放" href="/#" ></a>
+                    <span  class="erji"></span>
+                    <span class="bofangliang">2035.8万</span>
+                </div>
+            
+             
+        
+            <p class="remenwords">2022全网爆火流行歌曲推荐（持更）<a class="remenwordsa" href="/#" title="2022全网爆火流行歌曲推荐（持更）"></a></p>
+        </li>
+        </ul>
+    </div>
+    <div class="bangdan">
+        <div class="bangdannav">
+            <img src="img/推荐.png">
+        <a class="rementitle" href="/#">
+            榜单
+        </a>
+        <span class="more">
+            <a>更多</a>
+            <i><img src="img/小箭头.png"></i>
+        </span>
+        
+        </div>
+        <div class="remengedan">
+    
+            </div>
+</div>
+</div>
+    </div>
+</div>
+<body>
+    <script>
+
+let list = document.getElementsByClassName("hover1");
+        for (var i = 0; i < list.length; i++) {
+            list[i].onmouseover = function () {
+                this.style.backgroundColor = "black";
+            };
+            list[i].onmouseout = function () {
+                this.style.backgroundColor = "";
+            };
+        }
+
+
+let list3 =document.getElementsByClassName("hover2");
+            for (var i = 0; i < list3.length; i++) {
+            list3[i].onmouseover = function () {
+                this.style.backgroundColor = "#24242460";
+            };
+            list3[i].onmouseout = function () {
+                this.style.backgroundColor = "";
+            };
+        }
+        
+
+let ele1 = document.getElementById("zhongxin");
+        ele1.onmouseover = function () {
+                this.style.border = " 0.5px solid white";
+                
+            };
+            ele1.onmouseout = function () {
+                this.style.border = "";
+            };
+
+            
+let list4 = document.getElementsByClassName("menu1")
+            for (var i = 0; i < list4.length; i++) {
+            list4[i].onmouseover = function () {
+                this.style.backgroundColor = "rgba(0, 0, 0, 0.6)";
+            };
+            list4[i].onmouseout = function () {
+                this.style.backgroundColor = "";
+            };
+        }
+
+let ele2 = document.getElementById("tou");
+let menu =document.getElementById("menu");
+let flag =1,flag2=1;
+        ele2.onmouseover = function(){
+                menu.style.display = "block";
+            }
+            menu.onmouseover = function(){
+            flag2=0;
+            } 
+            ele2.onmouseleave =function(){
+                flag=0;
+                if(flag==0&&flag2==1)
+            menu.style.display="none"
+            }
+            menu.onmouseleave =function(){
+                if(flag==0&&flag2==0)
+                menu.style.display="none"
+            }
+</script>
+<script>
+//这段动态轮播参考了
+//https://blog.csdn.net/m0_52827996/article/details/127704021?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167314170516800192237001%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=167314170516800192237001&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-3-127704021-null-null.142^v70^control,201^v4^add_ask&utm_term=js%E5%8A%A8%E6%95%88%E8%BD%AE%E6%92%AD%E5%9B%BE&spm=1018.2226.3001.4187
+// 更改了滚动方向，增加了背景模糊的链接更改
+
+
+        let back = document.getElementsByClassName('lunbo')[0];
+        let box=document.getElementsByClassName('box')[0];
+        let pic=document.getElementsByClassName('pic')[0];
+        let img =pic.getElementsByTagName('a');
+        let pre=document.getElementsByClassName('pre')[0];
+        let next=document.getElementsByClassName('next')[0];
+        let lis=document.getElementsByClassName('lis')[0];
+        let spans=lis.getElementsByTagName('span');
+        var index=0;
+        let arr=['https://p1.music.126.net/pB7_jQC6fjmUyTUzDDQWrg==/109951168216935716.jpg?imageView&quality=89',
+                'https://p1.music.126.net/-2gJQpS6D8WcLQfZaHc0ww==/109951168216937297.jpg?imageView&quality=89',
+                'https://p1.music.126.net/gmiLxNDv5INLamkhye9bgg==/109951168216917436.jpg?imageView&quality=89',
+                'https://p1.music.126.net/RTqhH5Rg3zZ4pBbuzi8HkQ==/109951168216909934.jpg?imageView&quality=89',
+                'https://p1.music.126.net/pA3N4_mn_4MomPaddxRpww==/109951168216939844.jpg?imageView&quality=89',
+                'https://p1.music.126.net/pB7_jQC6fjmUyTUzDDQWrg==/109951168216935716.jpg?imageView&quality=89',
+]
+        function nextClick(){
+            index++
+            pic.style.transition='all .8s'
+            pic.style.transform='translateY('+(-index * 308) +'px)' ;
+            back.style.backgroundImage="url("+arr[index]+")";
+            if(index==  img.length-1){
+                index=0
+                setTimeout(() => {
+                    back.style.backgroundImage="url("+arr[5]+")";
+                    pic.style.transform='translate(0,0)' ;
+                    pic.style.transition='none';
+                    
+                }, 800);
+            }
+            for(var i=0;i<spans.length;i++){
+                spans[i].className=''
+                spans[index].className='current'
+            }
+        }
+        next.onclick=nextClick
+        function preClick(){
+            index--
+            if(index==-1){
+                pic.style.transform='translateY('+(-5 *308) +'px)' ;
+                pic.style.transition='none'
+            back.style.background="url("+arr[0]+")";
+
+                index=4
+                setTimeout(() => {
+                    pic.style.transform='translateY('+(-index * 308) +'px)' ;
+                    pic.style.transition='all .8s'
+            back.style.background="url("+arr[index]+")";
+
+                }, 0);
+            }else{
+                pic.style.transform='translateY('+(-index  *308) +'px)' ;
+                pic.style.transition='all .8s'
+            back.style.background="url("+arr[index]+")";
+
+            }
+            for(var i=0;i<spans.length;i++){
+                spans[i].className=''
+                spans[index].className='current'
+            }
+        }
+        pre.onclick=preClick
+
+        let timer=setInterval(nextClick,8000);
+
+        for(var i=0;i<spans.length;i++){
+            (function(i){
+                spans[i].onclick=function(){
+                    var allSpans=this.parentNode.children
+                    for(var j=0;j<allSpans.length;j++){
+                        allSpans[j].className=''
+                    }
+                    this.className='current'
+                    index=i
+                    pic.style.transform='translateY('+(-index  *308) +'px)' ;
+                    pic.style.transition='all .8s'
+                    back.style.background="url("+arr[index]+")";
+
+                }
+            })(i)
+        }
+        box.onmouseenter=function(){
+            clearInterval(timer)
+        }
+        box.onmouseleave=function(){
+            timer=setInterval(nextClick,8000)
+        }
+
+
+    </script>
+</body>
+</html>

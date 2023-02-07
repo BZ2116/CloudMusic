@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html {
+        font-size: 50px;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .mp3Box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* width: 100%; */
+        height: 1.08rem;
+        border: 1px solid black;
+        padding: 0 0.4rem;
+      }
+      .radioBox {
+        width: 0.6rem;
+        height: 0.6rem;
+        /* border: 1px solid red; */
+        border-radius: 50%;
+        background: url(./bofan.jpg) no-repeat center center;
+        background-size: 0.6rem 0.6rem;
+      }
+
+      .voice {
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 50%;
+        background: url(./voiceon.jpg) no-repeat center center;
+        background-size: 0.5rem 0.5rem;
+      }
+      #yinliang {
+        display: none;
+        position: relative;
+        top: 0.2rem;
+        left: -2.14rem;
+      }
+      .time {
+        font-size: 0.2rem;
+      }
+      input[type="range"] {
+        -webkit-appearance: none;
+        width: 50%;
+        border-radius: 0.2rem; /*这个属性设置使填充进度条时的图形为圆角*/
+        background: -webkit-linear-gradient(#059cfa, #059cfa) no-repeat;
+        background-size: 0% 100%;
+      }
+      input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+      }
+      input[type="range"]::-webkit-slider-runnable-track {
+        height: 0.2rem;
+        border-radius: 0.2rem; /*将轨道设为圆角的*/
+        box-shadow: 0 1px 1px #def3f8, inset 0 0.125em 0.125em #0d1112; /*轨道内置阴影效果*/
+      }
+      input[type="range"]:focus {
+        outline: none;
+      }
+
+      input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        height: 0.4rem;
+        width: 0.4rem;
+        margin-top: -5px; /*使滑块超出轨道部分的偏移量相等*/
+        background: #3299cc;
+        border-radius: 50%; /*外观设置为圆形*/
+        border: solid 0.125em rgba(205, 224, 230, 0.5); /*设置边框*/
+        box-shadow: 0 0.125em 0.125em #3b4547; /*添加底部阴影*/
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mp3Box">
+      <!-- 播放开关 -->
+      <div class="radioBox" onclick="bofan()">
+        <audio id="ado"></audio>
+      </div>
+      <!-- 进度条 -->
+      <input type="range" step="1" min="0" max="100" id="shichang" value="0" />
+      <!-- 时间 -->
+      <div class="time">
+        <span class="currentTime">00:00</span> /
+        <span class="duraTime">00:00</span>
+      </div>
+      <!-- 是否静音 -->
+      <div class="voice"></div>
+    </div>
+    <script>
+      var audio = document.querySelector("#ado");
+      // 音频地址
+      audio.src = "http://antiserver.kuwo.cn/anti.s?useless=/resource/&format=mp3&rid=MUSIC_96409423&response=res&type=convert_url&";
+      audio.controls = false;
+      audio.loop = true;
+      audio.volume = 0.8;
+      var rBox = document.querySelector(".radioBox");
+      rBox.appendChild(audio);
+      //   调整声音是否静音
+      var voice = document.querySelector(".voice");
+      voice.addEventListener("click", function () {
+        if (audio.muted) {
+          audio.muted = false;
+          voice.style.backgroundImage = "url(./voiceon.jpg)";
+        } else {
+          audio.muted = true;
+          voice.style.backgroundImage = "url(./voiceoff.jpg)";
+        }
+      });
+      //   播放暂停
+      function bofan() {
+        if (audio.paused) {
+          audio.play();
+          rBox.style.backgroundImage = "url(./zanting.jpg)";
+        } else {
+          audio.pause();
+          rBox.style.backgroundImage = "url(./bofan.jpg)";
+        }
+      }
+
+      //   获取音频总时长
+      if (audio != null) {
+        var duration;
+        audio.load();
+        audio.oncanplay = function () {
+          var duraTime = document.querySelector(".duraTime");
+          duraTime.innerHTML = transTime(audio.duration);
+        };
+      }
+      //   格式化时间格式
+      function transTime(time) {
+        let duration = parseInt(time);
+        let minute = parseInt(duration / 60);
+        let sec = (duration % 60) + "";
+        let isM0 = ":";
+        if (minute == 0) {
+          minute = "00";
+        } else if (minute < 10) {
+          minute = "0" + minute;
+        }
+        if (sec.length == 1) {
+          sec = "0" + sec;
+        }
+        return minute + isM0 + sec;
+      }
+      // 时长进度条
+      var scIpt = document.querySelector("#shichang");
+      scIpt.value = 0;
+      audio.ontimeupdate = function () {
+        scIpt.value = (audio.currentTime / audio.duration) * 100;
+        if (audio.currentTime == 0) {
+          scIpt.value = 0;
+        }
+        scIpt.style.backgroundSize = scIpt.value + "%";
+        var currentTime = document.querySelector(".currentTime");
+        currentTime.innerHTML = transTime(parseInt(audio.currentTime));
+        var duraTime = document.querySelector(".duraTime");
+        duraTime.innerHTML = transTime(audio.duration);
+      };
+
+      //进度条拖动
+      scIpt.oninput = function (e) {
+        var x = e.target.value;
+        var bfb = (x / 100) * audio.duration;
+        scIpt.style.value = bfb;
+        var sc = (bfb / audio.duration) * 100;
+        scIpt.style.backgroundSize = sc + "%";
+        audio.currentTime = bfb;
+        var currentTime = document.querySelector(".currentTime");
+        currentTime.innerHTML = transTime(parseInt(audio.currentTime));
+        if (audio.currentTime === audio.duration) {
+          audio.currentTime = 0;
+        }
+      };
+    </script>
+  </body>
+</html>
+
